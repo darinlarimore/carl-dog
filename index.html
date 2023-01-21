@@ -41,7 +41,6 @@
         overflow: hidden;
       }
 
-
       .thebutton {
         position: absolute;
           width: 210px;
@@ -57,6 +56,13 @@
       margin: 0px 0 0 -50px;
         left: 45%;
         top: 43%;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
       }
 
       .img-responsive {
@@ -79,6 +85,7 @@
       $(document).ready(function() {
           $('#theRunAwayButton').mouseover(run);
           $('#theRunAwayButton').mousemove(run);
+          $('#theRunAwayButton').tap(run);
       });
 
 
@@ -94,7 +101,7 @@
 
       $(function() {
         $( "#dialog-message" ).dialog({
-        height: 500,
+        height: 600,
           modal: false,
           buttons: {
             Ok: function() {
