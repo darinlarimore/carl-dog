@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script type='text/javascript' src='jquery.rwdImageMaps.js'></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>CARL</title>
+<style media="screen" type="text/css">
+
+body {
+	background-color:#000;
+	margin: 0;
+}
+.wrap {
+	position:relative;
+    width:100%;
+}
+div h1 {
+    width:100px;
+    margin:auto;
+}
+
+.thebutton {
+	position: absolute;
+    width: 210px;
+    height: 240px;
+            border: 0px;
+			background-color: transparent;
+	background-image: url(untitled-2.gif);
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+z-index: 999;
+ margin: 0px 0 0 -50px;
+  left: 45%;
+  top: 43%;
+}
+
+.img-responsive {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+
+</style>
+
+<script type='text/javascript'>
+
+var width = $(window).width() - 100;
+var height = $(window).height() - 100;
+
+function run() {
+    var top = Math.random() * height ;
+    var left = Math.random() * width ;
+    $('#theRunAwayButton').css('top', top + 'px').css('left', left + 'px');
+}
+
+$(document).ready(function() {
+    $('#theRunAwayButton').mouseover(run);
+    $('#theRunAwayButton').mousemove(run);
+});
+
+
+ function playSound(soundobj) {
+    var thissound=document.getElementById(soundobj);
+    thissound.play();
+}
+
+
+$(document).ready(function(e) {
+	$('img[usemap]').rwdImageMaps();
+});
+
+$(function() {
+    $( "#dialog-message" ).dialog({
+		height: 500,
+      modal: false,
+      buttons: {
+        Ok: function() {
+          $( this ).dialog( "close" );
+        }
+      }
+    });
+  });
+</script>
+</head>
+
+<body>
+<div class="wrap">
+ <h1><button id="theRunAwayButton" class="thebutton"></button></h1>
+    
+<img src="IMG_bg.jpg" class="img-responsive" width="2176" height="1632" usemap="#Map">
+<map name="Map">
+  <area shape="circle" coords="611,1568,63" onmouseover="playSound('cg');"/>
+  <area shape="circle" coords="143,1557,143" onmouseover="playSound('lgt');"/>
+  <area shape="rect" coords="1678,0,1988,260" onmouseover="playSound('cw');"/>
+  <area shape="rect" coords="498,46,1308,588" onmouseover="playSound('cge');"/>
+  <area shape="rect" coords="1418,4,1616,110" onmouseover="playSound('spl');"/>
+  <area shape="rect" coords="1312,4,1420,136" onmouseover="playSound('chg');"/>
+  <area shape="rect" coords="-8,954,566,1408" onmouseover="playSound('brk');"/>
+  <area shape="circle" coords="924,980,96" onmouseover="playSound('sqt');"/>
+  <area shape="rect" coords="1800,794,2170,1620" onmouseover="playSound('cmp');"/>
+  <area shape="rect" coords="1116,998,1782,1626" onmouseover="playSound('tr');"/>
+  <area shape="rect" coords="1349,590,1610,990" onmouseover="playSound('snf');"/>
+  <area shape="rect" coords="1312,139,1673,435" onmouseover="playSound('skt');"/>
+  <area shape="rect" coords="1684,266,2173,644" onmouseover="playSound('skt');"/>
+</map> 
+<audio id='cg' src='cough.wav'/>
+<audio id='lgt' src='lighter.wav'/>
+<audio id='cw' src='chew.wav'/>
+<audio id='cge' src='cage.wav'/>
+<audio id='spl' src='splash.wav'/>
+<audio id='chg' src='cachang.wav'/>
+<audio id='brk' src='brk2.wav'/>
+<audio id='sqt' src='squirt.wav'/>
+<audio id='cmp' src='crump.wav'/>
+<audio id='tr' src='tear.wav'/>
+<audio id='snf' src='sniff.wav'/>
+<audio id='skt' src='skit.wav'/>
+</div>
+
+
+
+</body>
+<div id="dialog-message" title="Level 1">
+ <p>This dog is named Carl.</p>
+ <p>Catch Carl.</p>
+</div>
+
+
+</html>
